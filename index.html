@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quarterly Earnings — Interactive RevealJS Deck</title>
+
+    <!-- RevealJS core + theme (CDN) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/white.css"
+      id="theme"
+    />
+
+    <!-- Code highlight theme -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/monokai.css"
+    />
+
+    <!-- KaTeX (for math) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
+    />
+
+    <style>
+      /* Custom styling */
+      .reveal {
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial,
+          sans-serif;
+      }
+      .subtitle {
+        font-size: 1.2rem;
+        margin-top: 0.5rem;
+        color: #666;
+      }
+      .footnote {
+        position: absolute;
+        bottom: 14px;
+        left: 24px;
+        font-size: 0.7rem;
+        color: #666;
+      }
+      .chart {
+        height: 420px;
+        margin: 20px auto;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <!-- Title slide (includes required email) -->
+        <section>
+          <h1>Quarterly Earnings Report</h1>
+          <p class="subtitle">
+            Modern, interactive presentation for stakeholders
+          </p>
+          <p><strong>Prepared by:</strong> Technical Consultant</p>
+          <p>
+            <strong>Contact:</strong>
+            <a href="mailto:23f1002151@ds.study.iitm.ac.in"
+              >23f1002151@ds.study.iitm.ac.in</a
+            >
+          </p>
+          <aside class="notes">
+            Welcome! This deck showcases RevealJS capabilities applied to a
+            financial earnings briefing. Use <kbd>S</kbd> for speaker notes,
+            <kbd>O</kbd> for overview, and <kbd>.</kbd> to pause.
+          </aside>
+        </section>
+
+        <!-- Markdown slide (meets requirement) -->
+        <section data-markdown>
+          <textarea data-template>
+## Quarter-at-a-Glance
+
+- **Revenue:** $2.31B _(▲ 6% YoY)_
+- **Operating Margin:** 18.4%
+- **EPS (Diluted):** $1.24
+
+---
+
+## Highlights
+
+1. Cloud ARR crossed **$900M**
+2. Supply chain savings of **$42M**
+3. Sparked growth in APAC **(▲ 11%)**
+
+> _All figures are illustrative for demo._
+          </textarea>
+        </section>
+
+        <!-- Fragments & progressive reveal -->
+        <section>
+          <h2>Key Drivers (Progressive Reveal)</h2>
+          <ul>
+            <li class="fragment">Pricing optimization in core subscriptions</li>
+            <li class="fragment">Logistics and procurement efficiencies</li>
+            <li class="fragment fade-up">
+              Regional mix shift toward high-margin SKUs
+            </li>
+          </ul>
+          <aside class="notes">
+            Unveil each driver and tie to business initiatives. Pause for
+            questions after the third fragment.
+          </aside>
+        </section>
+
+        <!-- Code sample with syntax highlighting & line focus -->
+        <section>
+          <pre><code class="language-python" data-line-numbers="1-2|5-7|9-13">
+import pandas as pd
+import numpy as np
+
+# Load quarterly transactional data
+sales = pd.read_csv('data/quarterly_sales.csv')
+
+# Compute YoY growth
+this_q = sales.query("quarter == 'Q2-2025'").revenue.sum()
+last_q = sales.query("quarter == 'Q2-2024'").revenue.sum()
+yoy = (this_q - last_q) / last_q
+
+print(f"Revenue YoY: {yoy:.2%}")
+</code></pre>
+          <aside class="notes">
+            Use code-focus (1-2, 5-7, 9-13) to step through logic. Replace with
+            real data paths when publishing internally.
+          </aside>
+        </section>
+
+        <!-- Financial math (MathJax/KaTeX) -->
+        <section>
+          <h2>Financial Formulas</h2>
+          <p>Discounted Cash Flow (DCF) — Net Present Value:</p>
+          <p>\[\text{NPV} = \sum_{t=1}^{T} \frac{CF_t}{(1+r)^t} - C_0\]</p>
+          <p>Capital Asset Pricing Model (CAPM):</p>
+          <p>\[\mathbb{E}[R_i] = R_f + \beta_i\,(\mathbb{E}[R_m] - R_f)\]</p>
+          <aside class="notes">
+            Briefly explain assumptions behind r (discount rate), cash flow
+            stability, and sensitivity to beta in CAPM.
+          </aside>
+        </section>
+
+        <!-- Live demo placeholder with iframe (optional enhancement) -->
+        <section>
+          <h2>Live Dashboard (Optional)</h2>
+          <p class="r-fit-text">
+            Embed real-time KPI dashboards for stakeholder Q&A.
+          </p>
+          <iframe
+            data-src="https://example.com/your-kpi-demo"
+            data-preload
+            style="width: 100%; height: 480px; border: 0"
+          ></iframe>
+          <aside class="notes">
+            Swap the iframe URL to a secured internal dashboard if required.
+          </aside>
+        </section>
+
+        <!-- Closing -->
+        <section>
+          <h2>Q&A</h2>
+          <p>Slides & source on GitHub Pages</p>
+          <p>
+            <small
+              >Contact:
+              <a href="mailto:23f1002151@ds.study.iitm.ac.in"
+                >23f1002151@ds.study.iitm.ac.in</a
+              ></small
+            >
+          </p>
+        </section>
+      </div>
+    </div>
+
+    <!-- Reveal core + plugins -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/math/math.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/notes/notes.js"></script>
+
+    <!-- MathJax 3 (used by RevealMath.MathJax3) -->
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <script>
+      // Initialize Reveal
+      Reveal.initialize({
+        hash: true,
+        width: 1280,
+        height: 720,
+        margin: 0.04,
+        controls: true,
+        progress: true,
+        history: true,
+        transition: "slide",
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealMath.MathJax3,
+          RevealNotes,
+        ],
+        // Optional math config (MathJax)
+        mathjax3: {
+          tex: {
+            inlineMath: [
+              ["$", "$"],
+              ["\\(", "\\)"],
+            ],
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
